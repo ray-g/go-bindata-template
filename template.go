@@ -25,13 +25,13 @@ func New(name string, data *BinData) *Template {
 	return &Template{data, template.New(name)}
 }
 
-// ParseFile loads the given file and parse the content of it
-func (t *Template) ParseFile(filename string) (*template.Template, error) {
+// Parse loads the given file and parse the content of it
+func (t *Template) Parse(filename string) (*template.Template, error) {
 	loaded, err := t.load(filename)
 	if err != nil {
 		return nil, err
 	}
-	tmpl, err := t.Parse(string(loaded))
+	tmpl, err := t.Template.Parse(string(loaded))
 	if err != nil {
 		return nil, err
 	}
@@ -48,7 +48,8 @@ func (t *Template) ParseFiles(filenames ...string) (*template.Template, error) {
 		}
 		content = append(content, loaded...)
 	}
-	tmpl, err := t.Parse(string(content))
+	tmpl, err := t.Template.Parse(string(content))
+
 	if err != nil {
 		return nil, err
 	}

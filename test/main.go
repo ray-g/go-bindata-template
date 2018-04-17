@@ -41,7 +41,7 @@ func singleRender(w http.ResponseWriter) error {
 		AssetNames: bin.AssetNames,
 	}
 
-	index, err := template.New("single", data).ParseFile("templates/single.tmpl")
+	index, err := template.New("single", data).Parse("templates/single.tmpl")
 
 	if err == nil {
 		err = index.Execute(w, idxData)
