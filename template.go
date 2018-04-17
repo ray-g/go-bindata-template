@@ -20,6 +20,11 @@ type Template struct {
 	*template.Template
 }
 
+// Must wraps Golang's html/template Must
+func Must(t *template.Template, err error) *template.Template {
+	return template.Must(t, err)
+}
+
 // New creates a new Template
 func New(name string, data *BinData) *Template {
 	return &Template{data, template.New(name)}
@@ -35,6 +40,7 @@ func (t *Template) Parse(filename string) (*template.Template, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	return tmpl, nil
 }
 
