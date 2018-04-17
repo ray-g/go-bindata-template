@@ -16,3 +16,4 @@
 # Projects Related
 main
 bindata/
+bindata.go
