@@ -17,3 +17,5 @@
 main
 bindata/
 bindata.go
+launch.json
+debug
