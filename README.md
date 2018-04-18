@@ -37,3 +37,5 @@ func someHandler(w http.ResponseWriter, r *http.Request) {
     }
 }
 ```
+
+More details usage can be found [here](https://github.com/ray-g/go-bindata-template/blob/master/test/main.go)
