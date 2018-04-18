@@ -5,9 +5,9 @@
 `go-bindata-template` extends Go's built-in [html/template](https://godoc.org/html/template)
 to load and parse embeded template content instead of filesystem packaged by `go-bindata`
 [jteeuwen/go-bindata](https://github.com/jteeuwen/go-bindata)
-or a little newer [kevenburke/go-bindata](https://github.com/kevinburke/go-bindata).
+or a bit newer [kevenburke/go-bindata](https://github.com/kevinburke/go-bindata).
 
-Modified `Parse` and `ParseFiles` to parse embeded contents.
+Override `Parse` and `ParseFiles` to parse embeded contents.
 Added `ParseDir` and `ParseAll` for convenice.
 
 ## Example
@@ -38,4 +38,4 @@ func someHandler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-More details usage can be found [here](https://github.com/ray-g/go-bindata-template/blob/master/test/main.go)
+More detail usages can be found [here](https://github.com/ray-g/go-bindata-template/blob/master/test/main.go)
